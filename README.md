@@ -1,5 +1,3 @@
-# ISEL-IECD
-Tudo de IECD
 #Tudo de IECD 
 
 ### Trabalhos feitos por:
