@@ -8,5 +8,3 @@
 
 # TODO:
 	- Iniciar o trabalho
-
-	
