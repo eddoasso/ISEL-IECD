@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <poema>
-	<autor>Luis de Camoes</autor>
-	<titulo>Mudam-se os tempos, mudam-se as vontades</titulo>
-	<estrofe>
+<autor>Luis de Camoes</autor>
+<titulo>Mudam-se os tempos, mudam-se as vontades</titulo>
+<estrofe>
 		<verso>Mudam-se os tempos, mudam-se as vontades,</verso>
 		<verso>Muda-se o ser, muda-se a confianca;</verso>
 		<verso>Todo o mundo e composto de mudanca,</verso>
 		<verso>Tomando sempre novas qualidades.</verso>
 	</estrofe>
-	<estrofe>
+<estrofe>
 		<verso>Continuamente vemos novidades,</verso>
 		<verso>Diferentes em tudo da esperanca;</verso>
 		<verso>Do mal ficam as magoas na lembranca,</verso>
 		<verso>E do bem, se algum houve, as saudades.</verso>
 	</estrofe>
-	<estrofe>
+<estrofe>
 		<verso>O tempo cobre o chao de verde manto,</verso>
 		<verso>Que ja coberto foi de neve fria,</verso>
 		<verso>E em mim converte em choro o doce canto.</verso>
 	</estrofe>
-	<estrofe>
+<estrofe>
 		<verso>E, afora este mudar-se cada dia,</verso>
 		<verso>Outra mudanca faz de mor espanto:</verso>
 		<verso>Que nao se muda ja como soia.</verso>

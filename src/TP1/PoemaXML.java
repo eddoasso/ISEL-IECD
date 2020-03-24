@@ -13,6 +13,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class PoemaXML {
+
 	private Document xmlFile;
 
 	public PoemaXML(Document xmlFile) {
@@ -30,51 +31,82 @@ public class PoemaXML {
 
 	}
 
-	public String getAllTexto() {
+	public void traverse(Node node, String prefix) {
+		System.out.println("node: " + node.getNodeName());
+		if (node.hasChildNodes()) {
+			NodeList children = node.getChildNodes();
+			for (int i = 0; i < children.getLength(); i++) {
+				Node child = children.item(i);
+				traverse(child, prefix + "\t");
+			}
+		}
+	}
+
+	public void traverse() {
+		traverse(xmlFile.getDocumentElement(), "\t");
+	}
+
+	public String classicText() {
 		String text = "";
 
-		NodeList nodes = xmlFile.getElementsByTagName("verso");
+		NodeList nodes = xmlFile.getElementsByTagName("estrofe");
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node n = nodes.item(i);
-			n.normalize();
-			text += n.getTextContent() + "\n";
+			text += n.getTextContent();
 		}
 
 		return text;
 	}
 
-	public void getClassificacaoEstrofes() {
-		NodeList nodes = xmlFile.getElementsByTagName("estrofe");
-		for (int j = 0; j < nodes.getLength(); j++) {
-			Node n = nodes.item(j);
-			n.normalize();
-			int k = 0;
-			NodeList children = n.getChildNodes();
-			for (int i = 0; i < children.getLength(); i++) {
-				Node child = children.item(i);
-				if (child.getNodeType() == Node.ELEMENT_NODE)
-					k++;
+	/*
+	 * public void Test() { Node verso =
+	 * xmlFile.getElementsByTagName("verso").item(0);
+	 * System.out.println(verso.ATTRIBUTE_NODE); }
+	 */
+
+	public void getNumVersos() {
+
+		NodeList estrofes = xmlFile.getElementsByTagName("estrofe");
+
+		for (int i = 0; i < estrofes.getLength(); i++) {
+			Node estrofe = estrofes.item(i);
+			int count = 0;
+			NodeList versos = estrofe.getChildNodes();
+			for (int j = 0; j < versos.getLength(); j++) {
+				Node n = versos.item(j);
+				if (n.getNodeType() == Node.ELEMENT_NODE)
+					count++;
 			}
-			System.out.println("Estrofe " + j + " tem " + k + " versos.");
+			;
+			System.out.println("A estrofe " + i + " tem " + count + " versos");
 		}
 	}
 
-	public void acrescentaVerso(int numEstrofe, String s) {
-		NodeList nodes = xmlFile.getElementsByTagName("estrofe");
-		Node n = nodes.item(numEstrofe);
+	public void AddVersoToEstrofe(int numEstrofe, String verso) {
+		NodeList estrofes = xmlFile.getElementsByTagName("estrofe");
+		Node n = estrofes.item(numEstrofe);
 
 		Element e = xmlFile.createElement("verso");
-		e.appendChild(xmlFile.createTextNode(s));
+		e.appendChild(xmlFile.createTextNode(verso));
 		n.appendChild(e);
 	}
 
-	public void removerVerso(int numEstrofe, int numVerso) {
-		Node n = xmlFile.getElementsByTagName("estrofe").item(numEstrofe);
-		n.normalize();
+	public void RemoveEstrofe(int numEstrofe) {
+		Node estrofe = xmlFile.getElementsByTagName("estrofe").item(numEstrofe);
+		estrofe.getParentNode().removeChild(estrofe);
+	}
 
-		Node v = n.getChildNodes().item(numVerso);
-		v.getParentNode().removeChild(v);
+	public void FindPalavrasInVersos(String s) {
+		NodeList versos = xmlFile.getElementsByTagName("verso");
+		for (int i = 0; i < versos.getLength(); i++) {
+			Node verso = versos.item(i);
 
+			if (verso.getTextContent().contains(s)) {
+				int num = i + 1;
+				System.out.println("A palavra " + s + " está no verso " + (int) (i + 1));
+			}
+
+		}
 	}
 
 	@Override
