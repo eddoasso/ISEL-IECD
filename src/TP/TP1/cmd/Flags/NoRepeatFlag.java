@@ -1,0 +1,16 @@
+package TP.TP1.cmd.Flags;
+
+import TP.TP1.cmd.Commands.AbstractCommand;
+import TP.TP1.cmd.Commands.AreYouMineCommand;
+
+public class NoRepeatFlag extends AbstractFlag {
+
+	@Override
+	public void execute(AbstractCommand command) {
+		if (command instanceof AreYouMineCommand) {
+			AreYouMineCommand c = (AreYouMineCommand) command;
+			c.decrementRepeat();
+		}
+	}
+
+}

@@ -1,4 +1,4 @@
-package TP.TP1.Commands;
+package TP.TP1.cmd.Commands;
 
 import java.util.HashMap;
 
