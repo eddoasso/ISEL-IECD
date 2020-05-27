@@ -2,10 +2,12 @@ package TP.TP1;
 
 import java.util.Scanner;
 
-import TP.TP1.Commands.CommandHandler;
+import TP.TP1.cmd.Commands.CommandHandler;
 
 public abstract class Utilizador {
 	private CommandHandler commandHandler;
+	private static String messagemNaoReconhecida = "Comando nao reconhecido, escrever !help para ajuda";
+
 	public Utilizador() {
 		commandHandler = new CommandHandler(this);
 	}
@@ -13,7 +15,7 @@ public abstract class Utilizador {
 	public abstract String quemSouEu();
 	public void displayMessageToUser(String msg) {
 		// TODO
-		System.out.println("mensagem recebida do servidor\n\r " + msg);
+		System.out.println("mensagem recebida do servidor\n" + msg);
 	}
 	public String readMessageFromConsole() {
 		Scanner sc = new Scanner(System.in);
@@ -32,10 +34,11 @@ public abstract class Utilizador {
 				// Copiar os restantes argumentos para o array das flags
 				String[] localArgs = new String[rawArgs.length - 1];
 				System.arraycopy(rawArgs, 1, localArgs, 0, rawArgs.length - 1);
-				commandHandler.processCommand(comando, localArgs);
-
+				if (!commandHandler.processCommand(comando, localArgs)) {
+					displayMessageToUser(messagemNaoReconhecida);
+				}
 			} else {
-				displayMessageToUser("Comando não reconhecido");
+				displayMessageToUser(messagemNaoReconhecida);
 			}
 
 			return rawCommand;
