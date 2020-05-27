@@ -1,16 +1,16 @@
 package aulaPratica.Aula1.Poema;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
-import org.w3c.dom.NodeList;
-
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class PoemaXML {
 
@@ -103,7 +103,7 @@ public class PoemaXML {
 
 			if (verso.getTextContent().contains(s)) {
 				int num = i + 1;
-				System.out.println("A palavra " + s + " está no verso " + (int) (i + 1));
+				System.out.println("A palavra " + s + " está no verso " + (int) (num));
 			}
 
 		}
