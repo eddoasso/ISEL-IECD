@@ -2,7 +2,7 @@ package TP.TP1.cmd.Flags;
 
 import java.util.HashMap;
 
-import TP.TP1.cmd.Commands.AbstractCommand;
+import TP.TP1.cmd.AbstractCommand;
 
 public abstract class AbstractFlag {
 	/**

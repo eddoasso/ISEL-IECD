@@ -1,6 +1,7 @@
 package TP.TP1.cmd.Commands;
 
 import TP.TP1.Utilizador;
+import TP.TP1.cmd.AbstractCommand;
 
 public class HelpCommand extends AbstractCommand {
 	private String format = "%-20s - %s%n";

@@ -1,6 +1,6 @@
 package TP.TP1.cmd.Flags;
 
-import TP.TP1.cmd.Commands.AbstractCommand;
+import TP.TP1.cmd.AbstractCommand;
 import TP.TP1.cmd.Commands.AreYouMineCommand;
 
 public class NoRepeatFlag extends AbstractFlag {

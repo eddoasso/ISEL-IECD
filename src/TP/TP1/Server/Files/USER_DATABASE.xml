@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<utilizadores>
+	<utilizador>
+		<username>
+			porfirio
+		</username>
+		<password_hash>
+			1234
+		</password_hash>
+		<user_salt>
+		</user_salt>
+	</utilizador>
+	<utilizador>
+		<username>
+			change me
+		</username>
+		<password_hash>
+			wahab
+		</password_hash>
+		<user_salt>
+		</user_salt>
+	</utilizador>
+	<utilizador>
+		<username>
+			teste
+		</username>
+		<password_hash>
+			adsdasd
+		</password_hash>
+		<user_salt>
+		</user_salt>
+	</utilizador>
+</utilizadores>

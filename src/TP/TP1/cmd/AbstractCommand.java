@@ -1,4 +1,4 @@
-package TP.TP1.cmd.Commands;
+package TP.TP1.cmd;
 
 import java.util.HashMap;
 
@@ -21,7 +21,7 @@ public abstract class AbstractCommand {
 	 * Verifica se todas os argumentos escritos no comando são validas para o
 	 * comando em questão. Iniciar flag com '-'. exemplo '-detail'.
 	 * 
-	 * Este metodo deve ser chamada antes de executar o comando propriamente
+	 * Este metodo deve ser chamado antes de executar o comando propriamente
 	 * 
 	 * @param args
 	 *            Argumentos.
@@ -36,19 +36,6 @@ public abstract class AbstractCommand {
 	 * 
 	 */
 	protected boolean verifyFlagsAndArgs(String[] args) {
-		/**
-		 * for (int i = 0; i < args.length; i++) { String s = args[i]; // é uma
-		 * flag if (s.startsWith("-")) { String chave =
-		 * s.substring(1).toLowerCase();
-		 * 
-		 * if (flags.containsKey(chave)) { // Fazer toogle do valor guardado em
-		 * enabledFlags AbstractFlags f = flags.get(chave); enabledFlags.put(f,
-		 * !enabledFlags.get(f)); } else { return false; } } // nao é flag, é um
-		 * argumento else { argumentos.add(args[i]); } }
-		 * 
-		 * return true;
-		 **/
-
 		for (String string : args) {
 			if (string.startsWith("-")) {
 				String chave = string.substring(1).toLowerCase();

@@ -3,6 +3,7 @@ package TP.TP1.cmd.Commands;
 import java.util.HashMap;
 
 import TP.TP1.Utilizador;
+import TP.TP1.cmd.AbstractCommand;
 import TP.TP1.cmd.Flags.AbstractFlag;
 import TP.TP1.cmd.Flags.NoRepeatFlag;
 import TP.TP1.cmd.Flags.RepeatFlag;
@@ -19,7 +20,6 @@ public class AreYouMineCommand extends AbstractCommand {
 	public void execute(Utilizador user, String[] args)
 			throws IllegalArgumentException {
 		if (verifyFlagsAndArgs(args)) {
-
 			// Se existir uma flag ativa, fazer cenas para alterar o restante
 			// comportamento
 			if (enabledFlags.containsValue(Boolean.TRUE)) {
